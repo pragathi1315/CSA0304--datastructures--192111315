@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+
+void create();
+void display();
+struct node;
+{
+	int data;
+	struct node *next;
+}*head=null,*p,*t,*newnode;
+void create()
+{
+	int i,n,ele;
+	printf("enter the count in the list");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		newnode=(struct node*)malloc(sizeof(struct node));
+		printf("enter the element");
+		scanf("%d",&ele);
+		newnode->data =ele;
+		newnode->next =null;
+	}
+	if(head==null)
+	{
+		head=newnode;
+		p=newnode;
+		
+	}
+	else
+	{
+		for(p=head;p->next!=null;p=p->next)
+		p->next=newnode;
+		p=newnode;
+	}
+	
+}
+void display()
+{
+	if(head==null)
+	printf("the list is empty");
+	else
+		for(p=head;p->next!=null;p=p->next)
+		printf("%d ->",p->data);
+	
+}
+int main()
+{
+	int choice;
+	printf("\n MAIN MENU \n");
+	printf("\n 1.create \n");
+	printf("\n 2.disply \n");
+	printf("\n 3.insert at begining   \n");
+	printf("\n 4.insert at the end \n");
+	printf("\n 5.insert at specified position     \n");
+	printf("\n 6.delete from begining         \n");
+	printf("\n 7.delete from the end        \n");
+	printf("\n 8.delete from specified position    \n");
+	printf("\n 9.exit   \n");
+	printf("\n --------------------------------------\n");
+	while(1)
+	{
+		printf("\n enter your choice");
+		scanf("%d",&choice);
+		switch(ch)
+		{
+			case 1:
+				   create();
+				   break;
+		    case 2:
+		    	   display();
+		    	   break;
+		    case 3:
+				   printf("\n wrong choice : \n");
+				   break;
+		}
+	}
+	return 0;
+}
